@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    //Listview Customer Order
+
+    <dimen name="cus_order_margin">10dp</dimen>
+    <dimen name="cus_order_padding">5dp</dimen>
+    <dimen name="cus_order_margin_top">10dp</dimen>
+    <dimen name="cus_order_margin_left">10dp</dimen>
+    <dimen name="cus_order_text_margin_right">10dp</dimen>
+    <dimen name="cus_order_text_size">14sp</dimen>
+</resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/cus_order_margin"
+    android:orientation="horizontal"
+    android:padding="@dimen/cus_order_padding">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/cus_order_margin_left"
+        android:layout_marginTop="@dimen/cus_order_margin_top"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/cus_order_text_margin_right"
+            android:text="@string/cus_ma_don_hang"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/cus_order_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtCusOrder_DH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/cus_order_text_size" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/cus_order_margin_left"
+            android:layout_marginTop="@dimen/cus_order_margin_top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/cus_order_text_margin_right"
+                android:text="@string/cus_khach_hang"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/cus_order_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCusOrder_KH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/cus_order_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/cus_order_margin_left"
+            android:layout_marginTop="@dimen/cus_order_margin_top"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thoi_gian_mua"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/cus_order_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCusOrder_NgayMua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/cus_order_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/cus_order_margin_left"
+            android:layout_marginTop="@dimen/cus_order_margin_top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/cus_order_text_margin_right"
+                android:text="@string/trang_thai_don_hang"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/cus_order_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCusOrder_TrangThai"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/cus_order_text_size" />
+
+            <ImageView
+                android:id="@+id/imgEdit"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_detail"/>
+    </LinearLayout>
+</LinearLayout>

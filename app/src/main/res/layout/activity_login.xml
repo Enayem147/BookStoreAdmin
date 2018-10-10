@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFFF">
+    <LinearLayout
+
+        android:layout_width="320dp"
+        android:layout_height="350dp"
+        android:background="@drawable/border_login"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+        <EditText
+            android:id="@+id/txtEmail"
+            android:drawablePadding="10dp"
+            android:textStyle="italic"
+            android:drawableLeft="@drawable/ic_login_email"
+            android:textColor="#373447"
+            android:textColorHint="#afaeb4"
+            android:hint="Nhập tài khoản"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/txtMK"
+            android:drawablePadding="10dp"
+            android:inputType="textPassword"
+            android:layout_marginTop="10dp"
+            android:textStyle="italic"
+            android:drawableLeft="@drawable/ic_login_password"
+            android:textColor="#373447"
+            android:textColorHint="#afaeb4"
+            android:hint="Nhập mật khẩu"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnDangNhap"
+            android:layout_marginTop="20dp"
+            android:text="Đăng nhập"
+            android:background="#e9e9ec"
+            android:textColor="#373447"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

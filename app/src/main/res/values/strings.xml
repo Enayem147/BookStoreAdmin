@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BookStoreAdmin</string>
+
+
+    <string name="cus_ma_don_hang">Mã đơn hàng : </string>
+    <string name="trang_thai_don_hang">Trạng thái đơn hàng : </string>
+    <string name="thoi_gian_mua">Thời gian mua hàng : </string>
+    <string name="cus_khach_hang">Khách hàng : </string>
+</resources>
