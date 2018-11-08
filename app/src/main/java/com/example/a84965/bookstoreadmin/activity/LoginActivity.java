@@ -66,9 +66,9 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intentManagement = new Intent(LoginActivity.this,ManagementActivity.class);
                                 startActivity(intentManagement);
                             } else {
+                                Toast.makeText(LoginActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
                                 Intent intentManagement = new Intent(LoginActivity.this,ManagementActivity.class);
                                 startActivity(intentManagement);
-                                Toast.makeText(LoginActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
                             }
 
                             // ...

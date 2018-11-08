@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".activity.OrderDetailActivity">
+
+    <include
+        android:id="@+id/toolBar_OrderDetail"
+        layout="@layout/layout_toolbar">
+    </include>
+
+    <ScrollView
+        android:layout_marginTop="@dimen/invoice_layout_margin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="45"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/invoice_layout_margin_left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mã đơn hàng : "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/invoice_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtOrder_MaHD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/invoice_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/invoice_layout_edit_text_size"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/invoice_layout_margin_left"
+                android:layout_marginTop="@dimen/invoice_layout_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Họ tên của khách hàng :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/invoice_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtOrder_Ten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/invoice_text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/invoice_layout_edit_text_size"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/invoice_layout_margin_left"
+                android:layout_marginTop="@dimen/invoice_layout_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Số điện thoại của khách hàng :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/invoice_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtOrder_SDT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/invoice_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/invoice_layout_edit_text_size"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/invoice_layout_margin_left"
+                android:layout_marginTop="@dimen/invoice_layout_margin_top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Địa chỉ của khách hàng :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/invoice_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtOrder_DiaChi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/invoice_text_size" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/invoice_layout_margin_top"
+        android:layout_weight="45"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/invoice_layout_margin_left"
+            android:layout_marginTop="@dimen/invoice_layout_margin_top"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Các sản phẩm trong đơn hàng :"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/invoice_text_size"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/listView_Order"
+                android:layout_width="@dimen/invoice_list_view_width"
+                android:layout_height="@dimen/invoice_list_view_height"
+                android:layout_marginLeft="@dimen/invoice_lis_view_margin_left"></ListView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/invoice_layout_margin_left"
+            android:layout_marginTop="@dimen/invoice_layout_margin_top"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng giá trị đơn hàng : "
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/invoice_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtInvoice_Total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:textSize="@dimen/invoice_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/invoice_layout_margin_top"
+        android:layout_weight="10"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnOrder_DatHang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_button"
+            android:text="Đóng đơn hàng"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

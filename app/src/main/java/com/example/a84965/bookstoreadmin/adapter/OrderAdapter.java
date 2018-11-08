@@ -3,6 +3,7 @@ package com.example.a84965.bookstoreadmin.adapter;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a84965.bookstoreadmin.R;
+import com.example.a84965.bookstoreadmin.activity.OrderDetailActivity;
 import com.example.a84965.bookstoreadmin.model.ChiTietDonHang;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -55,7 +57,7 @@ public class OrderAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         final TextView txtMaDH,txtKH,txtThoiGian,txtTrangThai;
-        ImageView imgEdit;
+        ImageView imgEdit,imgDetail;
         LayoutInflater inflater  = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.listview_order,null);
         txtMaDH = convertView.findViewById(R.id.txtCusOrder_DH);
@@ -63,6 +65,7 @@ public class OrderAdapter extends BaseAdapter {
         txtThoiGian = convertView.findViewById(R.id.txtCusOrder_NgayMua);
         txtTrangThai = convertView.findViewById(R.id.txtCusOrder_TrangThai);
         imgEdit = convertView.findViewById(R.id.imgEdit);
+        imgDetail = convertView.findViewById(R.id.imgOrderDetail);
 
         final  ChiTietDonHang chiTietDonHang = (ChiTietDonHang) getItem(position);
         txtMaDH.setText(chiTietDonHang.getDH_Ma());
@@ -156,6 +159,17 @@ public class OrderAdapter extends BaseAdapter {
                 dialog.show();
             }
         });
+
+        imgDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, OrderDetailActivity.class);
+                intent.putExtra("SDT",txtKH.getText().toString());
+                intent.putExtra("MaDH",txtMaDH.getText().toString());
+                context.startActivity(intent);
+            }
+        });
+
         return convertView;
     }
 

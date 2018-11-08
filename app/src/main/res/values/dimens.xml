@@ -11,4 +11,32 @@
     <dimen name="cus_order_margin_left">10dp</dimen>
     <dimen name="cus_order_text_margin_right">10dp</dimen>
     <dimen name="cus_order_text_size">14sp</dimen>
+
+    //activity invoice
+    <dimen name="invoice_logo_width">130dp</dimen>
+    <dimen name="invoice_logo_height">100dp</dimen>
+    <dimen name="invoice_layout_margin_top">10dp</dimen>
+    <dimen name="invoice_layout_margin">30dp</dimen>
+    <dimen name="invoice_layout_margin_left">40dp</dimen>
+    <dimen name="invoice_text_margin_left">10dp</dimen>
+    <dimen name="invoice_text_size">15sp</dimen>
+    <dimen name="invoice_list_view_width">250dp</dimen>
+    <dimen name="invoice_list_view_height">130dp</dimen>
+    <dimen name="invoice_lis_view_margin_left">10dp</dimen>
+    <dimen name="invoice_layout_edit_text_size">300dp</dimen>
+
+
+    //list view invoice
+    <dimen name="list_view_invoice_layout_height">100dp</dimen>
+    <dimen name="list_view_invoice_layout_width">230dp</dimen>
+    <dimen name="list_view_invoice_img_height">90dp</dimen>
+    <dimen name="list_view_invoice_img_width">60dp</dimen>
+    <dimen name="list_view_invoice_img_margin">10dp</dimen>
+    <dimen name="list_view_invoice_margin_top">10dp</dimen>
+    <dimen name="list_view_invoice_margin_right">10dp</dimen>
+    <dimen name="list_view_invoice_book_name_text_size">15sp</dimen>
+    <dimen name="list_view_invoice_book_name_height">60dp</dimen>
+    <dimen name="list_view_invoice_description_text_size">14sp</dimen>
+    <dimen name="list_view_invoice_description_margin_right">5sp</dimen>
+
 </resources>
