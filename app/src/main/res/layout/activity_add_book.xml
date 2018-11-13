@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AddBookActivity"
+    android:orientation="vertical"
+    android:weightSum="10">
+    <include
+        android:id="@+id/toolBar_AddBook"
+        layout="@layout/layout_toolbar">
+    </include>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_weight="9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/txtAddBook_MaSach"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:hint="Nhập mã sách"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/txtAddBook_TenSach"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:hint="Nhập tên sách "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:src="@drawable/no_img"
+                android:id="@+id/imgAddBook"
+                android:layout_width="70dp"
+                android:layout_height="80dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <Button
+                android:id="@+id/btnChonTheLoai"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:background="@drawable/border_button"
+                android:text="Chọn thể loại"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+            <TextView
+                android:id="@+id/txtAddBook_TheLoai"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <Button
+                android:id="@+id/btnChonTacGia"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:background="@drawable/border_button"
+                android:text="Chọn tác giả"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+            <TextView
+                android:id="@+id/txtAddBook_TacGia"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:text="Chọn nhà xuất bản : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Spinner
+                android:layout_marginLeft="5dp"
+                android:id="@+id/spnAddBook_NhaXB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/txtAddBook_NamXB"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:hint="Nhập năm xuất bản"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/txtAddBook_SoTrang"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:hint="Nhập số trang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/txtAddBook_GioiThieu"
+            android:gravity="top"
+            android:lines="9"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:textSize="15dp"
+            android:hint="Giới thiệu sơ lược về sản phẩm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:id="@+id/btnAddBook_ThemHinh"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:text="Thêm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

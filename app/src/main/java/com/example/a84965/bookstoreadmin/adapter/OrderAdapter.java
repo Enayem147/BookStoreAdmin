@@ -27,7 +27,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class OrderAdapter extends BaseAdapter {
     ArrayList<ChiTietDonHang> list;
@@ -59,7 +58,7 @@ public class OrderAdapter extends BaseAdapter {
         final TextView txtMaDH,txtKH,txtThoiGian,txtTrangThai;
         ImageView imgEdit,imgDetail;
         LayoutInflater inflater  = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.listview_order,null);
+        convertView = inflater.inflate(R.layout.list_view_order,null);
         txtMaDH = convertView.findViewById(R.id.txtCusOrder_DH);
         txtKH = convertView.findViewById(R.id.txtCusOrder_KH);
         txtThoiGian = convertView.findViewById(R.id.txtCusOrder_NgayMua);

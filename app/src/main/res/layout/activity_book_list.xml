@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BookListActivity"
+    android:orientation="vertical"
+    android:weightSum="10">
+    <include
+        android:id="@+id/toolBar_BookList"
+        layout="@layout/layout_toolbar">
+    </include>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <SearchView
+            android:id="@+id/searchView_BookList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></SearchView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="8"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    <ListView
+        android:id="@+id/listView_BookList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:id="@+id/btnThemSach"
+            android:text="THÊM MỚI"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

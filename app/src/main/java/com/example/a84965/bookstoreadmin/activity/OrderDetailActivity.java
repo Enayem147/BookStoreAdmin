@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.example.a84965.bookstoreadmin.R;
 import com.example.a84965.bookstoreadmin.adapter.OrderReviewAdapter;
 import com.example.a84965.bookstoreadmin.model.DonHang;
+import com.example.a84965.bookstoreadmin.model.KhachHang;
 import com.example.a84965.bookstoreadmin.ultil.GetChildFirebase;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +36,7 @@ public class OrderDetailActivity extends AppCompatActivity {
     Toolbar toolbar;
     ArrayList<DonHang> listDonHang;
     OrderReviewAdapter orderReviewAdapter;
+    Double total = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,19 @@ public class OrderDetailActivity extends AppCompatActivity {
     }
 
     private void initOrderDetail() {
-
+        txtMaHD.setText(maDH);
+        txtSDT.setText(sdt);
+        mDatabase.child("KhachHang").addChildEventListener(new GetChildFirebase() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                KhachHang khachHang = dataSnapshot.getValue(KhachHang.class);
+                if(khachHang.getKH_SDT().equals(sdt)){
+                    txtTen.setText(khachHang.getKH_HoTen());
+                    txtDiaChi.setText(khachHang.getKH_DiaChi());
+                }
+                super.onChildAdded(dataSnapshot, s);
+            }
+        });
     }
 
     private void initBookList() {
@@ -58,6 +72,8 @@ public class OrderDetailActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 DonHang donHang = dataSnapshot.getValue(DonHang.class);
                 if(donHang.getDH_Ma().equals(maDH)){
+                    total += (donHang.getSach_DonGia() * donHang.getSach_SL());
+                    txtTotal.setText(decimalFormat.format(total) +" đ");
                     listDonHang.add(donHang);
                     orderReviewAdapter.notifyDataSetChanged();
                 }
@@ -67,7 +83,6 @@ public class OrderDetailActivity extends AppCompatActivity {
     }
 
     private void initToolBar() {
-        mDatabase = FirebaseDatabase.getInstance().getReference();
         toolbar = findViewById(R.id.toolBar_OrderDetail);
         toolbar.setNavigationIcon(R.drawable.ic_menu_back);
         setSupportActionBar(toolbar);
@@ -83,10 +98,16 @@ public class OrderDetailActivity extends AppCompatActivity {
     }
 
     private void callControls() {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         Intent intent = getIntent();
         sdt = intent.getStringExtra("SDT");
         maDH = intent.getStringExtra("MaDH");
         listView = findViewById(R.id.listView_Order);
         listDonHang = new ArrayList<>();
+        txtMaHD = findViewById(R.id.txtOrder_MaHD);
+        txtTen = findViewById(R.id.txtOrder_Ten);
+        txtSDT = findViewById(R.id.txtOrder_SDT);
+        txtDiaChi = findViewById(R.id.txtOrder_DiaChi);
+        txtTotal = findViewById(R.id.txtOrder_Total);
     }
 }

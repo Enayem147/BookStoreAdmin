@@ -2,7 +2,6 @@ package com.example.a84965.bookstoreadmin.activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -12,50 +11,47 @@ import android.widget.Toast;
 
 import com.example.a84965.bookstoreadmin.R;
 import com.example.a84965.bookstoreadmin.model.ChiTietDonHang;
-import com.example.a84965.bookstoreadmin.model.DonHang;
-import com.example.a84965.bookstoreadmin.ultil.GetChildFirebase;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ManagementActivity extends AppCompatActivity {
-
+public class ManageBookActivity extends AppCompatActivity {
     GridLayout gridLayout;
     private static DatabaseReference mDatabase;
     static public ArrayList<ChiTietDonHang> orderList;
+    public static int nxbCount = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_management);
+        setContentView(R.layout.activity_manage_book);
         callControls();
-        initOrderList();
         setEventGridLayout(gridLayout);
+        getCountNXB();
     }
 
-    public static void initOrderList() {
-        orderList = new ArrayList<>();
-        mDatabase.child("DonHang").addChildEventListener(new GetChildFirebase() {
+    private void getCountNXB() {
+        mDatabase.child("NhaXuatBan").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                final String sdt = dataSnapshot.getKey();
-                mDatabase.child("DonHang").child(sdt).addChildEventListener(new GetChildFirebase() {
-                    @Override
-                    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                        DonHang donHang = dataSnapshot.getValue(DonHang.class);
-                        orderList.add(new ChiTietDonHang(donHang.getDH_Ma(),donHang.getDH_NgayDat(),donHang.getDH_TrangThai(),sdt));
-                        super.onChildAdded(dataSnapshot, s);
-                    }
-                });
-                super.onChildAdded(dataSnapshot, s);
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    nxbCount = (int)dataSnapshot.getChildrenCount();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }
-
     private void callControls() {
-        gridLayout = findViewById(R.id.rl_management);
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        gridLayout = findViewById(R.id.rl_manageBook);
     }
 
     private void setEventGridLayout(GridLayout eventGridLayout) {
@@ -67,18 +63,18 @@ public class ManagementActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     switch (finalI){
                         case 0 :
-                            Intent intentOrder = new Intent(ManagementActivity.this,OrderActivity.class);
+                            Intent intentOrder = new Intent(ManageBookActivity.this,BookListActivity.class);
                             startActivity(intentOrder);
                             break;
                         case 1 :
-                            Intent intentBook = new Intent(ManagementActivity.this,ManageBookActivity.class);
+                            Intent intentBook = new Intent(ManageBookActivity.this,OrderActivity.class);
                             startActivity(intentBook);
                             break;
                         case 2 :
-                            Toast.makeText(ManagementActivity.this, "Kho", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ManageBookActivity.this, "Tác giả", Toast.LENGTH_SHORT).show();
                             break;
                         case 3 :
-                            Toast.makeText(ManagementActivity.this, "Quảng cáo", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ManageBookActivity.this, "Giảm giá", Toast.LENGTH_SHORT).show();
                             break;
                     }
                 }

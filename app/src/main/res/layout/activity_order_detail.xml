@@ -164,7 +164,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtInvoice_Total"
+                android:id="@+id/txtOrder_Total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/red"
